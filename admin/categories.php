@@ -14,11 +14,11 @@
 					<div class="card-body">
 							<input type="hidden" name="id">
 							<div class="form-group">
-								<label class="control-label">Specialty</label>
+								<label class="control-label">Especialidad</label>
 								<textarea name="name" id="" cols="30" rows="2" class="form-control"></textarea>
 							</div>
 							<div class="form-group">
-								<label for="" class="control-label">Image</label>
+								<label for="" class="control-label">Imagen</label>
 								<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">
 							</div>
 							<div class="form-group">
@@ -30,7 +30,7 @@
 					<div class="card-footer">
 						<div class="row">
 							<div class="col-md-12">
-								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
+								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Guardar</button>
 								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="_reset()"> Cancel</button>
 							</div>
 						</div>

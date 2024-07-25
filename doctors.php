@@ -12,7 +12,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end mb-4 page-title">
-                    	<h3 class="text-white">Doctor's</h3>
+                    	<h3 class="text-white">Asesor</h3>
                         <hr class="divider my-4" />
                     </div>
                     
@@ -30,7 +30,7 @@
 								<?php
 								$s = $conn->query("SELECT * from medical_specialty where id = ".$_GET['sid'])->fetch_array()['name'];
 								?>
-								<h2><b>Doctor/'s who are in titled as <?php echo $s ?></b></h2>
+								<h2><b>Asesores que están titulados como <?php echo $s ?></b></h2>
 							</div>
 						</div>
 						<hr class="divider">
@@ -47,12 +47,12 @@
 						<img src="assets/img/<?php echo $row['img_path'] ?>" alt="">
 					</div>
 					<div class="col-md-6">
-						 <p>Nombre: <b><?php echo "Dr. ".$row['name'].', '.$row['name_pref'] ?></b></p>
+						 <p>Nombre: <b><?php echo $row['name'].', '.$row['name_pref'] ?></b></p>
 						 <p><small>Email: <b><?php echo $row['email'] ?></b></small></p>
-						 <p><small>Clinica: <b><?php echo $row['clinic_address'] ?></b></small></p>
+						 <p><small>Especialidad: <b><?php echo $row['clinic_address'] ?></b></small></p>
 						 <p><small>Contacto #: <b><?php echo $row['contact'] ?></b></small></p>
 						 <p><small><a href="javascript:void(0)" class="view_schedule" data-id="<?php echo $row['id'] ?>" data-name="<?php echo "Dr. ".$row['name'].', '.$row['name_pref'] ?>"><i class='fa fa-calendar'></i> Calendario</a></b></small></p>
-						 <p><b>Especialidades:</b></p>
+						 <p><b>Especialidades: </b></p>
 
 						 <div>
 						 	<?php if(!empty($row['specialty_ids'])): ?>
@@ -65,7 +65,7 @@
 						 </div>
 					</div>
 					<div class="col-md-3 text-center align-self-end-sm">
-						<button class="btn-outline-primary  btn  mb-4 set_appointment" type="button" data-id="<?php echo $row['id'] ?>"  data-name="<?php echo "Dr. ".$row['name'].', '.$row['name_pref'] ?>">Sacar Cita</button>
+						<button class="btn-outline-primary  btn  mb-4 set_appointment" type="button" data-id="<?php echo $row['id'] ?>"  data-name="<?php echo $row['name'].', '.$row['name_pref'] ?>">Sacar Cita</button>
 					</div>
 				</div>
 				<hr class="divider" style="max-width: 60vw">
@@ -84,13 +84,13 @@
     <script>
         
        $('.view_schedule').click(function(){
-			uni_modal($(this).attr('data-name')+" - Schedule","view_doctor_schedule.php?id="+$(this).attr('data-id'))
+			uni_modal($(this).attr('data-name')+" - Cronograma","view_doctor_schedule.php?id="+$(this).attr('data-id'))
 		})
        $('.set_appointment').click(function(){
        	if('<?php echo isset($_SESSION['login_id']) ?>' == 1)
-			uni_modal("Set Appointment with "+$(this).attr('data-name'),"set_appointment.php?id="+$(this).attr('data-id'),'mid-large')
+			uni_modal("Concertar cita con "+$(this).attr('data-name'),"set_appointment.php?id="+$(this).attr('data-id'),'mid-large')
 		else{
-			uni_modal("Login First","login.php")
+			uni_modal("Inicie sesión primero","login.php")
 		}
 		})
     </script>

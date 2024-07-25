@@ -25,14 +25,14 @@ while($row=$qry->fetch_assoc()){
 				<thead>
 					<tr>
 						<th class="text-center"></th>
-						<th class="text-center">Day</th>
-						<th class="text-center">From</th>
-						<th class="text-center">To</th>
+						<th class="text-center">Dia</th>
+						<th class="text-center">De</th>
+						<th class="text-center">A</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
-					$days = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+					$days = array("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo");
 					for($i = 0 ; $i < 7;$i++):
 					?>
 					<tr>
@@ -48,8 +48,8 @@ while($row=$qry->fetch_assoc()){
 		</div>
 	<hr>
 		<div class="row">
-			<button class="btn btn-primary btn-sm col-md-3 mr-2" >Save</button>
-			<button class="btn btn-secondary btn-sm col-md-3  " type="button" data-dismiss="modal" id="">Close</button>
+			<button class="btn btn-primary btn-sm col-md-3 mr-2" >Guardar</button>
+			<button class="btn btn-secondary btn-sm col-md-3  " type="button" data-dismiss="modal" id="">Cerrar</button>
 		</div>
 	</div>
 	</form>
@@ -65,7 +65,7 @@ while($row=$qry->fetch_assoc()){
 			data:$(this).serialize(),
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully saved","success");
+					alert_toast("Datos guardados exitosamente","success");
 					var title = $("#uni_modal .modal-title").html();
 					title.replace("Edit ",'')
 					end_load()

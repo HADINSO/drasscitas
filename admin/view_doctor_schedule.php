@@ -4,7 +4,7 @@
 	}
 </style>
 <?php 
-	include'db_connect.php';
+	include 'db_connect.php';
 	$qry = $conn->query("SELECT * FROM doctors_schedule where doctor_id=".$_GET['id']);
 ?>
 <div class="container-fluid">
@@ -13,8 +13,8 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
-						<th class="text-center">Day</th>
-						<th class="text-center">Schedule</th>
+						<th class="text-center">Dia</th>
+						<th class="text-center">Cronograma</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,8 +29,8 @@
 		</div>
 	<hr>
 		<div class="row">
-			<button class="btn btn-primary btn-sm col-md-3 mr-2" type="button" id="edit">Edit</button>
-			<button class="btn btn-secondary btn-sm col-md-3  " type="button" data-dismiss="modal" id="">Close</button>
+			<button class="btn btn-primary btn-sm col-md-3 mr-2" type="button" id="edit">Editar</button>
+			<button class="btn btn-secondary btn-sm col-md-3  " type="button" data-dismiss="modal" id="">Cerrar</button>
 		</div>
 	</div>
 </div>

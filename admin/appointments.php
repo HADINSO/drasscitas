@@ -39,21 +39,21 @@
 						<td><?php echo $p_arr[$row['patient_id']]['name'] ?></td>
 						<td>
 							<?php if($row['status'] == 0): ?>
-								<span class="badge badge-warning">Pending Request</span>
+								<span class="badge badge-warning">Solicitud pendiente</span>
 							<?php endif ?>
 							<?php if($row['status'] == 1): ?>
-								<span class="badge badge-primary">Confirmed</span>
+								<span class="badge badge-primary">Confirmada</span>
 							<?php endif ?>
 							<?php if($row['status'] == 2): ?>
-								<span class="badge badge-info">Rescheduled</span>
+								<span class="badge badge-info">Reprogramado</span>
 							<?php endif ?>
 							<?php if($row['status'] == 3): ?>
-								<span class="badge badge-info">Done</span>
+								<span class="badge badge-info">Hecho</span>
 							<?php endif ?>
 						</td>
 						<td class="text-center">
-							<button  class="btn btn-primary btn-sm update_app" type="button" data-id="<?php echo $row['id'] ?>">Update</button>
-							<button  class="btn btn-danger btn-sm delete_app" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+							<button  class="btn btn-primary btn-sm update_app" type="button" data-id="<?php echo $row['id'] ?>">Actualizar</button>
+							<button  class="btn btn-danger btn-sm delete_app" type="button" data-id="<?php echo $row['id'] ?>">Eliminar</button>
 						</td>
 					</tr>
 				<?php endwhile; ?>
@@ -64,13 +64,13 @@
 </div>
 <script>
 	$('.update_app').click(function(){
-		uni_modal("Edit Appintment","set_appointment.php?id="+$(this).attr('data-id'),"mid-large")
+		uni_modal("Editar cita","set_appointment.php?id="+$(this).attr('data-id'),"mid-large")
 	})
 	$('#new_appointment').click(function(){
-		uni_modal("Add Appintment","set_appointment.php","mid-large")
+		uni_modal("Agregar cita","set_appointment.php","mid-large")
 	})
 	$('.delete_app').click(function(){
-		_conf("Are you sure to delete this appointment?","delete_app",[$(this).attr('data-id')])
+		_conf("¿Estás segura de eliminar esta cita?","delete_app",[$(this).attr('data-id')])
 	})
 	function delete_app($id){
 		start_load()
@@ -80,7 +80,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Datos eliminados exitosamente",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

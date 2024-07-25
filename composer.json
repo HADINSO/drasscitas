@@ -1,0 +1,16 @@
+{
+    "name": "hadinso/doctors_appointment",
+    "description": "Este un sistema gestion de cistas para la empresas de comsultoria drasscitas s.a.s",
+    "autoload": {
+        "psr-4": {
+            "Hadinso\\DoctorsAppointment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HADINSO",
+            "email": "hadisferrin@gmail.com"
+        }
+    ],
+    "require": {}
+}

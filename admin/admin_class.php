@@ -30,7 +30,7 @@ Class Action {
 	}
 	function login2(){
 		extract($_POST);
-		$qry = $this->db->query("SELECT * FROM users where username = '".$email."' and password = '".md5($password)."' ");
+		$qry = $this->db->query("SELECT * FROM users where username = '".$email."' and password = '".$password."' ");
 		if($qry->num_rows > 0){
 			foreach ($qry->fetch_array() as $key => $value) {
 				if($key != 'passwors' && !is_numeric($key))
@@ -77,7 +77,7 @@ Class Action {
 		$data .= ", contact = '$contact' ";
 		$data .= ", address = '$address' ";
 		$data .= ", username = '$email' ";
-		$data .= ", password = '".md5($password)."' ";
+		$data .= ", password = '".$password."' ";
 		$data .= ", type = 3";
 		$chk = $this->db->query("SELECT * FROM users where username = '$email' ")->num_rows;
 		if($chk > 0){
@@ -245,7 +245,7 @@ Class Action {
 		$sched = date('H:i',strtotime($time));
 		$doc_sched_check = $this->db->query("SELECT * FROM doctors_schedule where doctor_id = $doctor_id and day = '$day' and ('$time' BETWEEN time_from and time_to )");
 		if($doc_sched_check->num_rows <= 0){
-			return json_encode(array('status'=>2,"msg"=>"Appointment schedule not valid for selected doctor's schedule."));
+			return json_encode(array('status'=>2,"msg"=>"Horario de citas no válido para el horario del médico seleccionado."));
 			exit;
 		}
 

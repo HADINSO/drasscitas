@@ -12,19 +12,19 @@ include ('admin/db_connect.php')
 		<form action="" id="manage-appointment">
 			<input type="hidden" name="doctor_id" value="<?php echo $_GET['id'] ?>">
 			<div class="form-group">
-				<label for="" class="control-label">Date</label>
+				<label for="" class="control-label">Fecha</label>
 				<input type="date" value="" name="date" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<label for="" class="control-label">Time</label>
+				<label for="" class="control-label">Hora</label>
 				<input type="time" value="" name="time" class="form-control" required>
 			</div>
 
 			<hr>
 			<div class="col-md-12 text-center">
-				<button class="btn-primary btn btn-sm col-md-4">Request</button>
-				<button class="btn btn-secondary btn-sm col-md-4  " type="button" data-dismiss="modal" id="">Close</button>
+				<button class="btn-primary btn btn-sm col-md-4">Asesoramiento</button>
+				<button class="btn btn-secondary btn-sm col-md-4  " type="button" data-dismiss="modal" id="">Cerrar</button>
 			</div>
 		</form>
 	</div>
@@ -42,7 +42,7 @@ include ('admin/db_connect.php')
 			success:function(resp){
 				resp = JSON.parse(resp)
 				if(resp.status == 1){
-					alert_toast("Request submitted successfully");
+					alert_toast("Solicitud enviada exitosamente");
 					end_load();
 					$('.modal').modal("hide");
 				}else{
