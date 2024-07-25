@@ -245,7 +245,7 @@ Class Action {
 		$sched = date('H:i',strtotime($time));
 		$doc_sched_check = $this->db->query("SELECT * FROM doctors_schedule where doctor_id = $doctor_id and day = '$day' and ('$time' BETWEEN time_from and time_to )");
 		if($doc_sched_check->num_rows <= 0){
-			return json_encode(array('status'=>2,"msg"=>"Horario de citas no válido para el horario del médico seleccionado."));
+			return json_encode(array('status'=>2,"msg"=>"Horario de citas no válido para el horario del asesor seleccionado."));
 			exit;
 		}
 

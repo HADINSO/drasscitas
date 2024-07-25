@@ -19,11 +19,10 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-						<th>Schedule</th>
-						<th>Doctor</th>
-						<th>Pateint</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Cronograma</th>
+						<th>Asesor</th>
+						<th>Estado</th>
+						<th>Accion</th>
 					</tr>
 					</thead>
 					<?php 
@@ -35,8 +34,7 @@
 					?>
 					<tr>
 						<td><?php echo date("l M d, Y h:i A",strtotime($row['schedule'])) ?></td>
-						<td><?php echo "DR. ".$doc_arr[$row['doctor_id']]['name'].', '.$doc_arr[$row['doctor_id']]['name'] ?></td>
-						<td><?php echo $p_arr[$row['patient_id']]['name'] ?></td>
+						<td><?php echo "Asesor: ".$doc_arr[$row['doctor_id']]['name'].', '.$doc_arr[$row['doctor_id']]['name'] ?></td>
 						<td>
 							<?php if($row['status'] == 0): ?>
 								<span class="badge badge-warning">Solicitud pendiente</span>

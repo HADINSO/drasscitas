@@ -99,7 +99,7 @@
 											<img src="../assets/img/<?php echo $row['img_path'] ?>" alt="">
 										</td>
 										<td class="">
-											<p>Nombre: <b><?php echo "Dr. " . $row['name'] . ', ' . $row['name_pref'] ?></b></p>
+											<p>Nombre: <b><?php echo "Asesor: " . $row['name'] . ', ' . $row['name_pref'] ?></b></p>
 											<p><small>Email: <b><?php echo $row['email'] ?></b></small></p>
 											<p><small>Direccion de la empresa: <b><?php echo $row['clinic_address'] ?></b></small></p>
 											<p><small>Contacto #: <b><?php echo $row['contact'] ?></b></small></p>
@@ -219,7 +219,7 @@
 	})
 
 	$('.view_schedule').click(function() {
-		uni_modal($(this).attr('data-name') + " - Schedule", "view_doctor_schedule.php?id=" + $(this).attr('data-id'))
+		uni_modal($(this).attr('data-name') + " - Cronograma", "view_doctor_schedule.php?id=" + $(this).attr('data-id'))
 	})
 	$('.delete_doctor').click(function() {
 		_conf("¿Estás segura de eliminar a esta este asesor?", "delete_doctor", [$(this).attr('data-id')])
