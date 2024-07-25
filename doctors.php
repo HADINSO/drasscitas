@@ -51,7 +51,7 @@
 						 <p><small>Email: <b><?php echo $row['email'] ?></b></small></p>
 						 <p><small>Especialidad: <b><?php echo $row['clinic_address'] ?></b></small></p>
 						 <p><small>Contacto #: <b><?php echo $row['contact'] ?></b></small></p>
-						 <p><small><a href="javascript:void(0)" class="view_schedule" data-id="<?php echo $row['id'] ?>" data-name="<?php echo "Dr. ".$row['name'].', '.$row['name_pref'] ?>"><i class='fa fa-calendar'></i> Calendario</a></b></small></p>
+						 <p><small><a href="javascript:void(0)" class="view_schedule" data-id="<?php echo $row['id'] ?>" data-name="<?php echo "Asesor: ".$row['name'].', '.$row['name_pref'] ?>"><i class='fa fa-calendar'></i> Calendario</a></b></small></p>
 						 <p><b>Especialidades: </b></p>
 
 						 <div>

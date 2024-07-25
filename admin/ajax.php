@@ -69,7 +69,7 @@ if($action == "save_schedule"){
 	if($save)
 		echo $save;
 }
-if($action == "set_appointment"){
+if($action == "set_appointment"){ 
 	$save = $crud->set_appointment();
 	if($save)
 		echo $save;
